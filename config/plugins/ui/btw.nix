@@ -1,8 +1,7 @@
 {pkgs, ...}: {
-  extraPlugins = with pkgs.vimUtils; [
-    (buildVimPlugin {
-      pname = "btw.nvim";
-      version = "2024-04-36";
+  extraPlugins = [
+    (pkgs.vimUtils.buildVimPlugin {
+      name = "btw.nvim";
       src = pkgs.fetchFromGitHub {
         owner = "letieu";
         repo = "btw.nvim";
