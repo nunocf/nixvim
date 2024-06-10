@@ -61,6 +61,7 @@
     ./plugins/utils/nvim-tree.nix # File explorer!
 
     ./plugins/utils/comment.nix
+    ./plugins/utils/indent-blankline.nix
     ./plugins/utils/copilot.nix
     ./plugins/utils/flash.nix
     ./plugins/utils/hardtime.nix
