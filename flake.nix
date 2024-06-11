@@ -15,7 +15,6 @@
   };
 
   outputs = {
-    nixpkgs,
     nixvim,
     flake-parts,
     pre-commit-hooks,
@@ -28,7 +27,6 @@
         system,
         pkgs,
         self',
-        lib,
         ...
       }: let
         nixvim' = nixvim.legacyPackages.${system};
