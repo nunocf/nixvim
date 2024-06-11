@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   extraPlugins = [
-    pkgs.vimUtils.buildVimPlugin
+    (pkgs.vimUtils.buildVimPlugin
     {
       pname = "biscuit.nvim";
       version = "1.0";
@@ -10,6 +10,6 @@
         rev = "c375565509e47dce6d693bfc7028b7f26dbf2bf7";
         sha256 = "sha256-VQbhdbDf8POB6+sR4Ys/k7suF8vQvXnFmeyJk6Zyc/o=";
       };
-    }
+    })
   ];
 }
