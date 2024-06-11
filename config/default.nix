@@ -99,6 +99,6 @@
     theme = "everforest";
     extraConfigLua = ''
       _G.theme = "${config.theme}"
-    ''
+    '';
   };
 }
