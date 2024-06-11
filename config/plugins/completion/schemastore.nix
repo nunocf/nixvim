@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  extraPlugins = with pkgs.vimUtils; [
-    (buildVimPlugin {
+  extraPlugins = [
+    (pkgs.vimUtils.buildVimPlugin {
       pname = "schemastore";
       version = "1.0";
       src = pkgs.fetchFromGitHub {
