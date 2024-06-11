@@ -51,7 +51,7 @@
       undofile = true;
 
       # Enable 24-bit colors
-      termguicolors = true;
+      # termguicolors = true;
 
       # Enable the sign column to prevent the screen from jumping
       signcolumn = "yes";

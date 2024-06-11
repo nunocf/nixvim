@@ -55,11 +55,11 @@
             action = "open_float";
             desc = "Line Diagnostics";
           };
-          "[d" = {
+          "<leader>x" = {
             action = "goto_next";
             desc = "Next Diagnostic";
           };
-          "]d" = {
+          "<leader>X" = {
             action = "goto_prev";
             desc = "Previous Diagnostic";
           };
