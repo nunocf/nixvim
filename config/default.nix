@@ -67,6 +67,7 @@
     ./plugins/utils/hardtime.nix
     ./plugins/utils/grapple.nix
     ./plugins/utils/illuminate.nix
+    ./plugins/utils/toggleterm.nix
     ./plugins/utils/nvim-autopairs.nix # pair symbols automatically
 
     #./plugins/utils/obsidian.nix
