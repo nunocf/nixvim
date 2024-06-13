@@ -23,6 +23,7 @@
             }
           '';
         };
+        prettierd.enable = true;
         stylua.enable = true;
         yamlfmt.enable = true;
         elm_format.enable = true;

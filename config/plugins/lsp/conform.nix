@@ -14,9 +14,9 @@
       lua = ["stylua"];
       nix = ["alejandra"];
       markdown = [["prettierd" "prettier"]];
-      yaml = ["yamllint" "yamlfmt"];
+      yaml = ["yamlfmt"];
       haskell = ["ormolu"];
-      cabal = ["cabalfmt"];
+      cabal = ["cabal_fmt"];
       elm = ["elm_format"];
       ruby = ["rubocop"];
     };
