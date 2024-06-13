@@ -2,6 +2,7 @@
   plugins.toggleterm = {
     enable = true;
     settings = {
+      insert_mappings = false;
       open_mapping = "[[<leader>t]]";
       direction = "float";
       float_opts = {
