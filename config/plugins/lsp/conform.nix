@@ -16,6 +16,7 @@
       markdown = [["prettierd" "prettier"]];
       yaml = ["yamllint" "yamlfmt"];
       haskell = ["ormolu"];
+      cabal = ["cabalfmt"];
       elm = ["elm_format"];
       ruby = ["rubocop"];
     };
