@@ -72,6 +72,7 @@
     ./plugins/utils/undotree.nix
     ./plugins/utils/ufo.nix
     ./plugins/utils/whichkey.nix # show mappings as you're using them
+    ./plugins/utils/spider.nix # improved b, e w g motions
     ./plugins/utils/vim-visual-multi.nix # multiline cursor
   ];
 
