@@ -32,5 +32,25 @@
       mode = "n";
       options.noremap = true;
     }
+    {
+      action = "<C-W>h";
+      key = "<C-h>";
+      mode = "n";
+    }
+    {
+      action = "<C-W>j";
+      key = "<C-j>";
+      mode = "n";
+    }
+    {
+      action = "<C-W>k";
+      key = "<C-k>";
+      mode = "n";
+    }
+    {
+      action = "<C-W>l";
+      key = "<C-l>";
+      mode = "n";
+    }
   ];
 }
