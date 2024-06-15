@@ -50,6 +50,8 @@
     # Shows a pretty cool bar for commands instead of the bottom bar.
     ./plugins/ui/noice.nix
 
+    # top bar buffer files like VS Code
+    ./plugins/ui/bufferline.nix
     # toast-like notifications
     ./plugins/ui/nvim-notify.nix
 
