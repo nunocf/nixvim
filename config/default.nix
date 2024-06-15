@@ -52,6 +52,7 @@
 
     # top bar buffer files like VS Code
     ./plugins/ui/bufferline.nix
+
     # toast-like notifications
     ./plugins/ui/nvim-notify.nix
 
@@ -71,6 +72,7 @@
     ./plugins/utils/undotree.nix
     ./plugins/utils/ufo.nix
     ./plugins/utils/whichkey.nix # show mappings as you're using them
+    ./plugins/utils/vim-visual-multi.nix # multiline cursor
   ];
 
   options = {
