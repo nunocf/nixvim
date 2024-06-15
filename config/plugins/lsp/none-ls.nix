@@ -7,10 +7,12 @@
       code_actions = {
         gitsigns.enable = true;
         statix.enable = true;
+        refactoring.enable = true;
       };
       diagnostics = {
         statix.enable = true;
         yamllint.enable = true;
+        rubocop.enable = true;
       };
       formatting = {
         alejandra.enable = true;

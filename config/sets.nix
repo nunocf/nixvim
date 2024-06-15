@@ -3,7 +3,7 @@
     opts = {
       # Enable numbers line numbers
       number = true;
-      relativenumber = false;
+      relativenumber = true;
 
       # Set tabs to 2 spaces
       tabstop = 2;

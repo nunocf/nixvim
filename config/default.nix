@@ -10,7 +10,6 @@
     ./keymaps.nix
     ./highlight.nix
 
-    ./plugins/colorscheme/biscuit.nix
     ./plugins/colorscheme/colorscheme.nix
 
     ./plugins/completion/cmp.nix
@@ -26,7 +25,6 @@
     # LSP stuff
     ./plugins/lsp/conform.nix
     ./plugins/lsp/fidget.nix
-    ./plugins/lsp/hlchunk.nix
     ./plugins/lsp/lsp.nix
     ./plugins/lsp/lspsaga.nix
     ./plugins/lsp/none-ls.nix
@@ -46,9 +44,6 @@
     #epic file search/preview
     ./plugins/ui/telescope.nix
 
-    # top bar buffer files like a file explorer
-    ./plugins/ui/bufferline.nix
-
     # shows off I use Nvim :)
     ./plugins/ui/btw.nix
 
@@ -57,8 +52,6 @@
 
     # toast-like notifications
     ./plugins/ui/nvim-notify.nix
-
-    ./plugins/utils/nvim-tree.nix # File explorer!
 
     ./plugins/utils/comment.nix
     ./plugins/utils/indent-blankline.nix
@@ -76,7 +69,6 @@
     ./plugins/utils/undotree.nix
     ./plugins/utils/ufo.nix
     ./plugins/utils/whichkey.nix # show mappings as you're using them
-    ./plugins/utils/nvim-tree.nix # File explorer!
   ];
 
   options = {

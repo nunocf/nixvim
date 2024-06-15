@@ -19,16 +19,16 @@
   keymaps = [
     {
       mode = ["n" "x" "o"];
-      key = "s";
+      key = "<leader>ls";
       action = "<cmd>lua require('flash').jump()<cr>";
       options = {
-        desc = "Flash";
+        desc = "Flash Jump";
       };
     }
 
     {
       mode = ["n" "x" "o"];
-      key = "S";
+      key = "<leader>lt";
       action = "<cmd>lua require('flash').treesitter()<cr>";
       options = {
         desc = "Flash Treesitter";
@@ -37,7 +37,7 @@
 
     {
       mode = "o";
-      key = "r";
+      key = "<leader>lR";
       action = "<cmd>lua require('flash').remote()<cr>";
       options = {
         desc = "Remote Flash";
@@ -46,7 +46,7 @@
 
     {
       mode = ["x" "o"];
-      key = "R";
+      key = "<leader>lr";
       action = "<cmd>lua require('flash').treesitter_search()<cr>";
       options = {
         desc = "Treesitter Search";

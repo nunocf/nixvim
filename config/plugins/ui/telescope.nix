@@ -23,13 +23,13 @@
       "<leader>ff" = {
         action = "find_files";
         options = {
-          desc = "Find project files";
+          desc = "[F]ind [F]iles";
         };
       };
-      "<leader>st" = {
+      "<leader>fg" = {
         action = "live_grep";
         options = {
-          desc = "Grep (root dir)";
+          desc = "[F]ind Via [G]rep";
         };
       };
       "<leader>:" = {
@@ -38,10 +38,10 @@
           desc = "Command History";
         };
       };
-      "<leader>b" = {
+      "<leader>fb" = {
         action = "buffers";
         options = {
-          desc = "+buffer";
+          desc = "[F]ind [B]uffers";
         };
       };
       "<leader>fR" = {
@@ -50,16 +50,10 @@
           desc = "Resume";
         };
       };
-      "<leader>fg" = {
+      "<leader>fr" = {
         action = "oldfiles";
         options = {
-          desc = "Recent";
-        };
-      };
-      "<leader>fb" = {
-        action = "buffers";
-        options = {
-          desc = "Buffers";
+          desc = "[Find] [R]ecent";
         };
       };
       "<C-p>" = {
@@ -110,10 +104,10 @@
           desc = "Workspace diagnostics";
         };
       };
-      "<leader>sh" = {
+      "<leader>fh" = {
         action = "help_tags";
         options = {
-          desc = "Help pages";
+          desc = "[F]ind [H]elp";
         };
       };
       "<leader>sH" = {
@@ -122,10 +116,10 @@
           desc = "Search Highlight Groups";
         };
       };
-      "<leader>sk" = {
+      "<leader>fk" = {
         action = "keymaps";
         options = {
-          desc = "Keymaps";
+          desc = "[F]ind [K]eymaps";
         };
       };
       "<leader>sM" = {
