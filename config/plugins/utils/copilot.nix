@@ -24,6 +24,11 @@
     require("CopilotChat").setup { }
   '';
 
+  extraLuaPackages = ps: [
+    ps.tiktoken_core
+    ps.jsregexp
+  ];
+
   keymaps = [
     {
       mode = "x";

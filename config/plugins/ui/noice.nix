@@ -2,7 +2,7 @@
   plugins.noice = {
     enable = true;
     notify = {
-      enabled = false;
+      enabled = true;
     };
     messages = {
       enabled = true; # Adds a padding-bottom to neovim statusline when set to false for some reason
@@ -14,6 +14,11 @@
       progress = {
         enabled = false;
         view = "mini";
+      };
+      override = {
+        "vim.lsp.util.convert_input_to_markdown_lines" = true;
+        "vim.lsp.util.stylize_markdown" = true;
+        "cmp.entry.get_documentation" = true;
       };
     };
     popupmenu = {
