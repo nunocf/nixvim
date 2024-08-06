@@ -12,7 +12,11 @@
         yamlls = {enable = true;};
         hls.enable = true;
         elmls.enable = true;
-        ruby-lsp.enable = true;
+        ruby-lsp = {
+          enable = true;
+          # use local ruby-lsp
+          package = null;
+        };
       };
       keymaps = {
         silent = true;
