@@ -12,7 +12,10 @@
       diagnostics = {
         statix.enable = true;
         yamllint.enable = true;
-        rubocop.enable = true;
+        rubocop = {
+          enable = true;
+          package = null;
+        };
       };
       formatting = {
         alejandra.enable = true;
@@ -29,7 +32,10 @@
         stylua.enable = true;
         yamlfmt.enable = true;
         elm_format.enable = true;
-        rubocop.enable = true;
+        rubocop = {
+          enable = true;
+          package = null;
+        };
       };
     };
   };
