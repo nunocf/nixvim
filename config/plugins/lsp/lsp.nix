@@ -10,7 +10,15 @@
         nixd = {enable = true;};
         marksman = {enable = true;};
         yamlls = {enable = true;};
-        hls.enable = true;
+        hls = {
+          enable = true;
+          settings = {
+            haskell = {
+              formattingProvider = "ormolu";
+            };
+          };
+        };
+
         elmls.enable = true;
         ruby-lsp = {
           enable = true;

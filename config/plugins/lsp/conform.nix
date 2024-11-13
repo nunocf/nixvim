@@ -15,7 +15,6 @@
       nix = ["alejandra"];
       markdown = [["prettierd" "prettier"]];
       yaml = ["yamlfmt"];
-      haskell = ["ormolu"];
       cabal = ["cabal_fmt"];
       elm = ["elm_format"];
       ruby = ["rubocop"];
