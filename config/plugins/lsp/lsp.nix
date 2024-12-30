@@ -17,6 +17,7 @@
               formattingProvider = "ormolu";
             };
           };
+          filetypes = ["haskell" "lhaskell" "cabal"];
         };
 
         elmls.enable = true;
