@@ -23,7 +23,7 @@
     ./plugins/git/worktree.nix
 
     # LSP stuff
-    ./plugins/lsp/conform.nix
+    # ./plugins/lsp/conform.nix
     ./plugins/lsp/fidget.nix
     ./plugins/lsp/lsp.nix
     ./plugins/lsp/lspsaga.nix

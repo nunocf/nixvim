@@ -3,8 +3,8 @@
     enable = true;
     settings = {
       format_on_save = true;
-      lsp_fallback = true;
-      timeout_ms = 500;
+      # lsp_fallback = true;
+      # timeout_ms = 500;
     };
     notifyOnError = true;
     formattersByFt = {
