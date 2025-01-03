@@ -20,7 +20,7 @@
           filetypes = ["haskell" "lhaskell" "cabal"];
         };
 
-        # elmls.enable = true;
+        elmls.enable = true;
         ruby-lsp = {
           enable = true;
           # use local ruby-lsp
