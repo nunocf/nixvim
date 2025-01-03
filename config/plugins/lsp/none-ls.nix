@@ -1,8 +1,8 @@
 {
   plugins.none-ls = {
     enable = true;
+    settings = {update_in_insert = false;};
     enableLspFormat = true;
-    updateInInsert = false;
     sources = {
       code_actions = {
         gitsigns.enable = true;
@@ -22,11 +22,9 @@
         prettier = {
           enable = true;
           disableTsServerFormatter = true;
-          withArgs = ''
-            {
-              extra_args = { "--no-semi", "--single-quote" },
-            }
-          '';
+          settings = {
+            extra_args = ["--no-semi" "--single-quote"];
+          };
         };
         prettierd.enable = true;
         stylua.enable = true;

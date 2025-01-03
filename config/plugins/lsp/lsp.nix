@@ -6,12 +6,13 @@
       servers = {
         eslint = {enable = true;};
         html = {enable = true;};
-        lua-ls = {enable = true;};
+        lua_ls = {enable = true;};
         nixd = {enable = true;};
         marksman = {enable = true;};
         yamlls = {enable = true;};
         hls = {
           enable = true;
+          installGhc = true;
           settings = {
             haskell = {
               formattingProvider = "ormolu";
@@ -21,7 +22,7 @@
         };
 
         elmls.enable = true;
-        ruby-lsp = {
+        ruby_lsp = {
           enable = true;
           # use local ruby-lsp
           package = null;
