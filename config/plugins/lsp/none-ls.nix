@@ -31,7 +31,7 @@
         prettierd.enable = true;
         stylua.enable = true;
         yamlfmt.enable = true;
-        elm_format.enable = true;
+        # elm_format.enable = true;
         rubocop = {
           enable = true;
           package = null;

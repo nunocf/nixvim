@@ -17,7 +17,7 @@
       markdown = [["prettierd" "prettier"]];
       yaml = ["yamlfmt"];
       cabal = ["cabal_fmt"];
-      elm = ["elm_format"];
+      # elm = ["elm_format"];
       ruby = ["rubocop"];
     };
   };
