@@ -20,7 +20,7 @@
     ./plugins/git/gitlinker.nix
     ./plugins/git/gitsigns.nix
     ./plugins/git/lazygit.nix
-    ./plugins/git/worktree.nix
+    ./plugins/git/gitblame.nix
 
     ./plugins/web-devicons/web-devicons.nix
 

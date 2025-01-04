@@ -1,9 +1,11 @@
+{ config, lib, ... }:
 {
   plugins.gitsigns = {
     enable = true;
     settings = {
       trouble = true;
       current_line_blame = true;
+      current_line_blame_formatter = "   <author>, <committer_time:%R> • <summary>";
       signs = {
         add = {
           text = "│";
@@ -26,9 +28,12 @@
       };
     };
   };
-  keymaps = [
+  keymaps = lib.mkIf config.plugins.gitsigns.enable [
     {
-      mode = ["n" "v"];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "<leader>gh";
       action = "gitsigns";
       options = {
