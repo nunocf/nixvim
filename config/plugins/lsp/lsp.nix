@@ -1,15 +1,34 @@
 {
+  lib,
+  pkgs,
+  ...
+}: {
   plugins = {
-    lsp-format.enable = true;
+    lsp-format = {
+      enable = true;
+    };
     lsp = {
       enable = true;
+      inlayHints = true;
       servers = {
-        eslint = {enable = true;};
-        html = {enable = true;};
-        lua_ls = {enable = true;};
-        nixd = {enable = true;};
-        marksman = {enable = true;};
-        yamlls = {enable = true;};
+        html = {
+          enable = true;
+        };
+        lua_ls = {
+          enable = true;
+        };
+        nixd = {
+          enable = true;
+        };
+        markdown_oxide = {
+          enable = true;
+        };
+        yamlls = {
+          enable = true;
+        };
+        eslint = {
+          enable = true;
+        };
         hls = {
           enable = true;
           installGhc = true;
@@ -20,8 +39,9 @@
           };
           filetypes = ["haskell" "lhaskell" "cabal"];
         };
-
-        elmls.enable = true;
+        elmls = {
+          enable = true;
+        };
         ruby_lsp = {
           enable = true;
           # use local ruby-lsp
@@ -51,33 +71,34 @@
             action = "type_definition";
             desc = "Type Definition";
           };
-          K = {
-            action = "hover";
-            desc = "Hover";
-          };
-          "<leader>cw" = {
-            action = "workspace_symbol";
-            desc = "Workspace Symbol";
-          };
+          # Use LSP Saga keybinding instead
+          # K = {
+          #   action = "hover";
+          #   desc = "Hover";
+          # };
+          # "<leader>cw" = {
+          #   action = "workspace_symbol";
+          #   desc = "Workspace Symbol";
+          # };
           "<leader>cr" = {
             action = "rename";
             desc = "Rename";
           };
         };
-        diagnostic = {
-          "<leader>cd" = {
-            action = "open_float";
-            desc = "Line Diagnostics";
-          };
-          "<leader>x" = {
-            action = "goto_next";
-            desc = "Next Diagnostic";
-          };
-          "<leader>X" = {
-            action = "goto_prev";
-            desc = "Previous Diagnostic";
-          };
-        };
+        # diagnostic = {
+        #   "<leader>cd" = {
+        #     action = "open_float";
+        #     desc = "Line Diagnostics";
+        #   };
+        #   "<leader>x" = {
+        #     action = "goto_next";
+        #     desc = "Next Diagnostic";
+        #   };
+        #   "<leader>X" = {
+        #     action = "goto_prev";
+        #     desc = "Previous Diagnostic";
+        #   };
+        # };
       };
     };
   };
@@ -103,5 +124,15 @@
     require('lspconfig.ui.windows').default_options = {
       border = _border
     }
+
+    config = function(_, opts)
+      local lspconfig = require('lspconfig')
+      for server, config in pairs(opts.servers) do
+        -- passing config.capabilities to blink.cmp merges with the capabilities in your
+        -- `opts[server].capabilities, if you've defined it
+        config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
+      end
+    end;
   '';
 }

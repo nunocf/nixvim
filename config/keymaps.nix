@@ -92,17 +92,10 @@
 
     # Find and replace word under cursor
     {
-      mode = "n";
-      key = "<leader>R";
-      action = ":%s/\<C-r><C-w>//g<Left><Left>";
-      options = {
-        desc = "Search and replace word under cursor";
-      };
-    }
-
-    # Find and replace word under cursor
-    {
-      mode = "v";
+      mode = [
+        "n"
+        "v"
+      ];
       key = "<leader>R";
       action = ":%s/\<C-r><C-w>//g<Left><Left>";
       options = {

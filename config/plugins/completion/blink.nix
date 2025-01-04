@@ -1,11 +1,7 @@
-{
-  pkgs,
-  inputs,
-  system,
-  ...
-}: {
+{pkgs, ...}: {
   extraPlugins = with pkgs.vimPlugins; [
     blink-cmp-copilot
+    blink-cmp
   ];
   plugins = {
     cmp-emoji.enable = true;
@@ -20,7 +16,6 @@
       '';
     blink-cmp = {
       enable = true;
-      package = inputs.blink-cmp.packages.${system}.default;
       luaConfig.pre =
         # Lua
         ''
@@ -47,7 +42,7 @@
             "path"
             "snippets"
             "spell"
-            "treesitter"
+            # "treesitter"
           ];
           providers = {
             emoji = {
