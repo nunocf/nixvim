@@ -13,10 +13,11 @@
 
     ./plugins/colorscheme/colorscheme.nix
 
+    # autocompletion stuff
+    ./plugins/completion/blink.nix
+    ./plugins/completion/blink-compat.nix
     ./plugins/completion/cmp.nix
     ./plugins/completion/copilot-cmp.nix
-    ./plugins/completion/lspkind.nix
-    ./plugins/completion/cmp.nix
 
     ./plugins/git/gitlinker.nix
     ./plugins/git/gitsigns.nix
