@@ -34,29 +34,33 @@
         nvim = nixvim'.makeNixvimWithModule {
           inherit pkgs;
           module = ./config;
+          extraSpecialArgs = {
+            inherit inputs system;
+          };
         };
       in {
         checks = {
-          default = pkgs.nixvimLib.check.mkTestDerivationFromNvim {
-            inherit nvim;
-            name = "A nixvim configuration";
-          };
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
             src = ./.;
             hooks = {
               statix.enable = true;
-              alejandra.enable = true;
+              nixfmt-rfc-style.enable = true;
+              deadnix = {
+                enable = true;
+                settings = {
+                  edit = true;
+                };
+              };
             };
           };
         };
 
-        formatter = pkgs.alejandra;
+        formatter = pkgs.nixfmt-rfc-style;
 
         packages.default = nvim;
 
         devShells = {
-          default = with pkgs;
-            mkShell {inherit (self'.checks.pre-commit-check) shellHook;};
+          default = with pkgs; mkShell {inherit (self'.checks.pre-commit-check) shellHook;};
         };
       };
     };

@@ -1,8 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}: {
   extraPlugins = with pkgs.vimPlugins; [
     blink-cmp-copilot
-    blink-cmp
   ];
+
   plugins = {
     cmp-emoji.enable = true;
     cmp-git.enable = true;
@@ -17,15 +22,15 @@
     blink-cmp = {
       enable = true;
       luaConfig.pre =
-        # Lua
+        # lua
         ''
           require('blink.compat').setup({debug = true, impersonate_nvim_cmp = true})
         '';
+
       settings = {
         keymap = {
           preset = "super-tab";
         };
-
         signature = {
           enabled = true;
         };
@@ -42,27 +47,27 @@
             "path"
             "snippets"
             "spell"
-            # "treesitter"
+            #"treesitter"
           ];
           providers = {
             emoji = {
-              enabled = true;
+              name = "emoji";
               module = "blink.compat.source";
             };
             copilot = {
-              enabled = true;
+              name = "copilot";
               module = "blink-cmp-copilot";
             };
             git = {
-              enabled = true;
+              name = "git";
               module = "blink.compat.source";
             };
             spell = {
-              enabled = true;
+              name = "spell";
               module = "blink.compat.source";
             };
             calc = {
-              enabled = true;
+              name = "calc";
               module = "blink.compat.source";
             };
           };
@@ -110,7 +115,6 @@
             Emoji = "🤶";
           };
         };
-
         completion = {
           menu = {
             border = "none";
