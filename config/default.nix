@@ -6,6 +6,7 @@
   # Import all your configuration modules here
   imports = [
     # base vim
+    ./autocommands.nix
     ./sets.nix
     ./keymaps.nix
     ./highlight.nix
@@ -80,7 +81,7 @@
 
   options = {
     theme = lib.mkOption {
-      default = lib.mkDefault "paradise";
+      default = lib.mkDefault "yoru";
       type = lib.types.enum [
         "aquarium"
         "decay"
@@ -110,8 +111,9 @@
   };
 
   config = {
-    # The base16 theme to use, if you want to use another theme, change it in colorscheme.nix
-    theme = "paradise";
+    # The base16 theme to use, if you want to use another theme,
+    # change it in colorscheme.nix
+    theme = "material-darker";
     extraConfigLua = ''
       _G.theme = "${config.theme}"
     '';

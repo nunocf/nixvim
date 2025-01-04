@@ -12,3 +12,6 @@ To test this config simply run the following command
 ```
 nix run .
 ```
+
+## Treesitter issues
+if you're dealing with a broken notification system, try running `:TSInstall` and `:TSUpdate` from within NeoVim.
