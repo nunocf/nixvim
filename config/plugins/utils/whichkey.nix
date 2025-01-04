@@ -24,11 +24,6 @@
           # icon = "";
         }
         {
-          __unkeyed-1 = "<leader>n";
-          group = "File tree";
-          # icon = "";
-        }
-        {
           __unkeyed-1 = "<leader>s";
           group = "Search";
           # icon = "";

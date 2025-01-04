@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   performance = {
     byteCompileLua = {
       enable = true;
@@ -24,7 +25,7 @@
   opts = {
     # Enable numbers line numbers
     number = true;
-    relativenumber = true;
+    relativenumber = false;
 
     # Set tabs to 2 spaces
     tabstop = 2;
@@ -63,7 +64,11 @@
     updatetime = 50; # faster completion (4000ms default)
 
     # Set completeopt to have a better completion experience
-    completeopt = ["menuone" "noselect" "noinsert"]; # mostly just for cmp
+    completeopt = [
+      "menuone"
+      "noselect"
+      "noinsert"
+    ]; # mostly just for cmp
 
     # Enable persistent undo history
     swapfile = false;
@@ -106,6 +111,6 @@
 
     # We don't need to see things like INSERT anymore
     showmode = false;
-    background = "dark";
+    # background = "dark";
   };
 }

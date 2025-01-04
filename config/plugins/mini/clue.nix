@@ -2,9 +2,11 @@
   config,
   lib,
   ...
-}: let
-  colors = import ../../colors/${config.theme}.nix {};
-in {
+}:
+let
+  colors = import ../../colors/${config.theme}.nix { };
+in
+{
   plugins.mini.modules.clue = {
     window = {
       delay = 500;
@@ -93,15 +95,61 @@ in {
       }
     ];
     clues = [
-      {__raw = "require('mini.clue').gen_clues.builtin_completion()";}
-      {__raw = "require('mini.clue').gen_clues.g()";}
-      {__raw = "require('mini.clue').gen_clues.marks()";}
-      {__raw = "require('mini.clue').gen_clues.registers()";}
-      {__raw = "require('mini.clue').gen_clues.windows()";}
-      {__raw = "require('mini.clue').gen_clues.z()";}
+      { __raw = "require('mini.clue').gen_clues.builtin_completion()"; }
+      { __raw = "require('mini.clue').gen_clues.g()"; }
+      { __raw = "require('mini.clue').gen_clues.marks()"; }
+      { __raw = "require('mini.clue').gen_clues.registers()"; }
+      { __raw = "require('mini.clue').gen_clues.windows()"; }
+      { __raw = "require('mini.clue').gen_clues.z()"; }
+      {
+        mode = "n";
+        keys = "<Leader>b";
+        desc = "+Buffers";
+      }
+      {
+        mode = "n";
+        keys = "<Leader><Tab>";
+        desc = "+Tabs";
+      }
+      {
+        mode = "n";
+        keys = "<Leader>c";
+        desc = "+Code";
+      }
+      {
+        mode = "n";
+        keys = "<Leader>f";
+        desc = "+Find, etc";
+      }
+      {
+        mode = "n";
+        keys = "<Leader>g";
+        desc = "+Git";
+      }
+      {
+        mode = "n";
+        keys = "<Leader>l";
+        desc = "+Flash";
+      }
+      {
+        mode = "n";
+        keys = "<Leader>r";
+        desc = "+Spectre";
+      }
+      {
+        mode = "n";
+        keys = "<Leader>u";
+        desc = "+Utils";
+      }
+      {
+        mode = "n";
+        keys = "<Leader>v";
+        desc = "+Splits";
+      }
     ];
   };
-  highlight = with colors;
+  highlight =
+    with colors;
     lib.mkIf (config.plugins.mini.enable && lib.hasAttr "clue" config.plugins.mini.modules) {
       MiniClueDescSingle = {
         bg = base01;

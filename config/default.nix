@@ -12,46 +12,23 @@
     ./keymaps.nix
     ./highlight.nix
 
-    ./plugins/colorscheme/colorscheme.nix
-
-    ./plugins/completion
-
-    ./plugins/git
-
-    ./plugins/lsp
-
-    ./plugins/mini
-
-    ./plugins/snacks
-
     ./snippets/luasnip.nix
 
+    ./plugins/colorscheme/colorscheme.nix
+    ./plugins/completion
+    ./plugins/git
+    ./plugins/lsp
+    ./plugins/mini
+    ./plugins/snacks
     ./plugins/statusline/lualine.nix
-
     ./plugins/treesitter
-
     ./plugins/ui
-
-    ./plugins/utils/comment.nix
-    ./plugins/utils/copilot.nix
-    ./plugins/utils/flash.nix
-    ./plugins/utils/hardtime.nix
-    ./plugins/utils/grapple.nix
-    ./plugins/utils/illuminate.nix
-    ./plugins/utils/toggleterm.nix
-
-    #./plugins/utils/obsidian.nix
-    ./plugins/utils/oil.nix # buffer based directory editor
-    ./plugins/utils/undotree.nix
-    ./plugins/utils/ufo.nix
-    ./plugins/utils/whichkey.nix # show mappings as you're using them
-    ./plugins/utils/spider.nix # improved b, e w g motions
-    ./plugins/utils/vim-visual-multi.nix # multiline cursor
+    ./plugins/utils
   ];
 
   options = {
     theme = lib.mkOption {
-      default = lib.mkDefault "paradise";
+      default = lib.mkDefault "everforest";
       type = lib.types.enum [
         "aquarium"
         "decay"
