@@ -1,57 +1,66 @@
+{ config, lib, ... }:
+let
+  colors = import ../../colors/${config.theme}.nix { };
+in
 {
-  config,
-  lib,
-  ...
-}: let
-  colors = import ../../colors/${config.theme}.nix {};
-in {
   plugins = {
     bufferline = {
       enable = true;
       settings = {
         options = {
-          separator_style = "thick"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
+          separator_style = "thin"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
         };
         highlights = lib.mkIf config.colorschemes.base16.enable {
           fill = {
-            fg = colors.base00;
-            bg = colors.base00;
+            fg = "none";
+            bg = "none";
           };
           background = {
-            fg = colors.base03;
-            bg = colors.base01;
+            fg = "none";
+            bg = "none";
+          };
+          buffer = {
+            fg = "none";
+            bg = "none";
           };
           buffer_selected = {
             fg = colors.base05;
-            bg = colors.base00;
+            bg = colors.base01;
             italic = false;
           };
           buffer_visible = {
-            fg = colors.base03;
-            bg = colors.base00;
+            fg = colors.base05;
+            bg = "none";
           };
           close_button = {
-            fg = colors.base03;
-            bg = colors.base01;
+            fg = "none";
+            bg = "none";
           };
           close_button_visible = {
             fg = colors.base03;
-            bg = colors.base01;
+            bg = "none";
           };
           close_button_selected = {
             fg = colors.base08;
-            bg = colors.base00;
+            bg = colors.base01;
           };
-
           indicator_selected = {
-            fg = colors.base00;
-            bg = colors.base00;
+            fg = colors.base0E;
+            bg = colors.base01;
           };
           indicator_visible = {
+            fg = colors.base0E;
+            bg = "none";
+          };
+          separator = {
             fg = colors.base00;
             bg = colors.base00;
           };
-          separator = {
+          separator_selected = {
+            fg = colors.base00;
+            bg = colors.base00;
+          };
+          separator_visible = {
             fg = colors.base00;
             bg = colors.base00;
           };
@@ -65,17 +74,30 @@ in {
           };
           modified_selected = {
             fg = colors.base0B;
-            bg = colors.base00;
+            bg = colors.base01;
           };
           tab_close = {
             fg = colors.base00;
             bg = colors.base00;
           };
+          duplicate = {
+            bg = "none";
+            italic = false;
+          };
+          duplicate_visible = {
+            bg = "none";
+            italic = false;
+          };
+          duplicate_selected = {
+            fg = "none";
+            bg = colors.base01;
+            italic = false;
+          };
         };
       };
     };
   };
-  keymaps = [
+  keymaps = lib.mkIf config.plugins.bufferline.enable [
     {
       mode = "n";
       key = "<Tab>";

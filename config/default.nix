@@ -2,7 +2,8 @@
   config,
   lib,
   ...
-}: {
+}:
+{
   # Import all your configuration modules here
   imports = [
     # base vim
@@ -13,51 +14,25 @@
 
     ./plugins/colorscheme/colorscheme.nix
 
-    # autocompletion stuff
-    ./plugins/completion/blink.nix
-    ./plugins/completion/blink-compat.nix
-    ./plugins/completion/cmp.nix
-    ./plugins/completion/copilot-cmp.nix
+    ./plugins/completion
 
-    ./plugins/git/gitlinker.nix
-    ./plugins/git/gitsigns.nix
-    ./plugins/git/gitblame.nix
+    ./plugins/git
 
-    ./plugins/web-devicons/web-devicons.nix
-
-    # LSP stuff
-    ./plugins/lsp/conform.nix
-    ./plugins/lsp/lsp.nix
-    ./plugins/lsp/lspsaga.nix
-    ./plugins/lsp/none-ls.nix
-    ./plugins/lsp/trouble.nix
+    ./plugins/lsp
 
     ./plugins/mini
 
     ./plugins/snacks
 
-    # snippets
     ./snippets/luasnip.nix
 
-    # Status bar
     ./plugins/statusline/lualine.nix
 
-    # Treesitter
-    ./plugins/treesitter/treesitter-context.nix
-    ./plugins/treesitter/treesitter-textobjects.nix
-    ./plugins/treesitter/treesitter.nix
+    ./plugins/treesitter
 
-    #epic file search/preview
-    ./plugins/ui/telescope.nix
-
-    # Shows a pretty cool bar for commands instead of the bottom bar.
-    ./plugins/ui/noice.nix
-
-    # top bar buffer files like VS Code
-    ./plugins/ui/bufferline.nix
+    ./plugins/ui
 
     ./plugins/utils/comment.nix
-    ./plugins/utils/indent-blankline.nix
     ./plugins/utils/copilot.nix
     ./plugins/utils/flash.nix
     ./plugins/utils/hardtime.nix
