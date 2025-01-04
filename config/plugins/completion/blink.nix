@@ -47,7 +47,7 @@
             "path"
             "snippets"
             "spell"
-            #"treesitter"
+            # "treesitter"
           ];
           providers = {
             emoji = {
