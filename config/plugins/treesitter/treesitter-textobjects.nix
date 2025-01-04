@@ -1,6 +1,6 @@
 {
   plugins.treesitter-textobjects = {
-    enable = false;
+    enable = true;
     select = {
       enable = true;
       lookahead = true;
@@ -44,6 +44,20 @@
       };
       swapPrevious = {
         "<leader>A" = "@parameter.outer";
+      };
+    };
+    lspInterop = {
+      enable = true;
+      border = "single";
+      peekDefinitionCode = {
+        "<leader>df" = {
+          query = "@function.outer";
+          desc = "Peek definition outer function";
+        };
+        "<leader>dF" = {
+          query = "@class.outer";
+          desc = "Peek definition outer class";
+        };
       };
     };
   };

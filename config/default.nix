@@ -39,7 +39,7 @@
     ./plugins/statusline/lualine.nix
 
     # Treesitter
-    # ./plugins/treesitter/treesitter-context.nix
+    ./plugins/treesitter/treesitter-context.nix
     ./plugins/treesitter/treesitter-textobjects.nix
     ./plugins/treesitter/treesitter.nix
 
