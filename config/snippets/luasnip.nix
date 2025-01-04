@@ -1,9 +1,11 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+
+{
   plugins.luasnip = {
     enable = true;
     settings = {
       enable_autosnippets = true;
-      cut_selection_keys = "<Tab>";
+      store_selection_keys = "<Tab>";
     };
     fromVscode = [
       {

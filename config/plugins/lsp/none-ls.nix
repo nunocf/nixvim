@@ -1,13 +1,13 @@
-{
+{pkgs, ...}: {
   plugins.none-ls = {
     enable = true;
-    settings = {update_in_insert = false;};
     enableLspFormat = true;
+    settings = {
+      update_in_insert = false;
+    };
     sources = {
       code_actions = {
-        gitsigns.enable = true;
         statix.enable = true;
-        refactoring.enable = true;
       };
       diagnostics = {
         statix.enable = true;
@@ -18,7 +18,10 @@
         };
       };
       formatting = {
-        alejandra.enable = true;
+        nixfmt = {
+          enable = true;
+          package = pkgs.nixfmt-rfc-style;
+        };
         prettier = {
           enable = true;
           disableTsServerFormatter = true;

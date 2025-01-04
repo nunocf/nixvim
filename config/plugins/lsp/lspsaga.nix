@@ -73,15 +73,15 @@
         silent = true;
       };
     }
-    {
-      mode = "n";
-      key = "gr";
-      action = "<cmd>Lspsaga finder ref<CR>";
-      options = {
-        desc = "Goto References";
-        silent = true;
-      };
-    }
+    # {
+    #   mode = "n";
+    #   key = "gr";
+    #   action = "<cmd>Lspsaga finder ref<CR>";
+    #   options = {
+    #     desc = "Goto References";
+    #     silent = true;
+    #   };
+    # }
 
     # {
     #   mode = "n";

@@ -21,18 +21,20 @@
 
     ./plugins/git/gitlinker.nix
     ./plugins/git/gitsigns.nix
-    ./plugins/git/lazygit.nix
     ./plugins/git/gitblame.nix
 
     ./plugins/web-devicons/web-devicons.nix
 
     # LSP stuff
-    # ./plugins/lsp/conform.nix
-    ./plugins/lsp/fidget.nix
+    ./plugins/lsp/conform.nix
     ./plugins/lsp/lsp.nix
     ./plugins/lsp/lspsaga.nix
     ./plugins/lsp/none-ls.nix
     ./plugins/lsp/trouble.nix
+
+    ./plugins/mini
+
+    ./plugins/snacks
 
     # snippets
     ./snippets/luasnip.nix
@@ -48,17 +50,11 @@
     #epic file search/preview
     ./plugins/ui/telescope.nix
 
-    # shows off I use Nvim :)
-    ./plugins/ui/btw.nix
-
     # Shows a pretty cool bar for commands instead of the bottom bar.
     ./plugins/ui/noice.nix
 
     # top bar buffer files like VS Code
     ./plugins/ui/bufferline.nix
-
-    # toast-like notifications
-    ./plugins/ui/nvim-notify.nix
 
     ./plugins/utils/comment.nix
     ./plugins/utils/indent-blankline.nix
@@ -68,10 +64,8 @@
     ./plugins/utils/grapple.nix
     ./plugins/utils/illuminate.nix
     ./plugins/utils/toggleterm.nix
-    ./plugins/utils/nvim-autopairs.nix # pair symbols automatically
 
     #./plugins/utils/obsidian.nix
-    ./plugins/utils/surround.nix
     ./plugins/utils/oil.nix # buffer based directory editor
     ./plugins/utils/undotree.nix
     ./plugins/utils/ufo.nix

@@ -1,6 +1,8 @@
-{config, ...}: let
-  colors = import ../../colors/${config.theme}.nix {};
-in {
+{ config, ... }:
+let
+  colors = import ../../colors/${config.theme}.nix { };
+in
+{
   plugins.lualine = {
     enable = true;
     settings = {
@@ -8,8 +10,7 @@ in {
         theme = {
           normal = {
             a = {
-              bg = "#b4befe";
-              fg = "#1c1d21";
+              bg = "#nil";
             };
             b = {
               bg = "nil";
@@ -27,7 +28,12 @@ in {
         };
         globalstatus = true;
         disabled_filetypes = {
-          statusline = ["dashboard" "alpha" "starter" "snacks_dashboard"];
+          statusline = [
+            "dashboard"
+            "alpha"
+            "starter"
+            "snacks_dashboard"
+          ];
         };
       };
       inactive_sections = {
@@ -42,15 +48,11 @@ in {
             __unkeyed = "mode";
             fmt = "string.lower";
             color = {
-              fg =
-                if config.colorschemes.base16.enable
-                then colors.base04
-                else "none";
-              bg =
-                if config.colorschemes.base16.enable
-                then colors.base00
-                else "none";
+              fg = colors.base04;
+              bg = "nil";
             };
+            separator.left = "";
+            separator.right = "";
           }
         ];
         lualine_b = [
@@ -58,19 +60,12 @@ in {
             __unkeyed = "branch";
             icon.__unkeyed = "";
             color = {
-              fg =
-                if config.colorschemes.base16.enable
-                then colors.base04
-                else "none";
-              bg =
-                if config.colorschemes.base16.enable
-                then colors.base00
-                else "none";
+              fg = colors.base04;
+              bg = "nil";
             };
             separator.left = "";
             separator.right = "";
           }
-          "diff"
           {
             __unkeyed = "diff";
             separator.left = "";
@@ -87,21 +82,14 @@ in {
               hint = "󰝶 ";
             };
             color = {
-              fg =
-                if config.colorschemes.base16.enable
-                then colors.base08
-                else "none";
-              bg =
-                if config.colorschemes.base16.enable
-                then colors.base00
-                else "none";
+              fg = colors.base08;
+              bg = "nil";
             };
             separator.left = "";
             separator.right = "";
           }
         ];
-        lualine_x = [
-        ];
+        lualine_x = [ "" ];
         lualine_y = [
           {
             __unkeyed = "filetype";
@@ -117,14 +105,8 @@ in {
               unnamed = "";
             };
             color = {
-              fg =
-                if config.colorschemes.base16.enable
-                then colors.base04
-                else "none";
-              bg =
-                if config.colorschemes.base16.enable
-                then colors.base00
-                else "none";
+              fg = colors.base05;
+              bg = "nil";
             };
             separator.left = "";
             separator.right = "";
@@ -134,14 +116,8 @@ in {
           {
             __unkeyed = "location";
             color = {
-              fg =
-                if config.colorschemes.base16.enable
-                then colors.base0B
-                else "none";
-              bg =
-                if config.colorschemes.base16.enable
-                then colors.base00
-                else "none";
+              fg = colors.base0B;
+              bg = "nil";
             };
             separator.left = "";
             separator.right = "";
