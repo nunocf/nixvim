@@ -1,19 +1,21 @@
 {
   plugins.flash = {
     enable = true;
-    labels = "asdfghjklqwertyuiopzxcvbnm";
-    search = {
-      mode = "fuzzy";
-    };
-    jump = {
-      autojump = true;
-    };
-    label = {
-      uppercase = false;
-      rainbow = {
-        enabled = false;
-        shade = 5;
+    settings = {
+      label = {
+        uppercase = false;
+        rainbow = {
+          enabled = false;
+          shade = 5;
+        };
       };
+      jump = {
+        autojump = true;
+      };
+      search = {
+        mode = "fuzzy";
+      };
+      labels = "asdfghjklqwertyuiopzxcvbnm";
     };
   };
   keymaps = [
