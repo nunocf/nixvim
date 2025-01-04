@@ -4,10 +4,42 @@ in {
   plugins.lualine = {
     enable = true;
     settings = {
+      options = {
+        theme = {
+          normal = {
+            a = {
+              bg = "#b4befe";
+              fg = "#1c1d21";
+            };
+            b = {
+              bg = "nil";
+            };
+            c = {
+              bg = "nil";
+            };
+            z = {
+              bg = "nil";
+            };
+            y = {
+              bg = "nil";
+            };
+          };
+        };
+        globalstatus = true;
+        disabled_filetypes = {
+          statusline = ["dashboard" "alpha" "starter" "snacks_dashboard"];
+        };
+      };
+      inactive_sections = {
+        lualine_x = [
+          "filename"
+          "filetype"
+        ];
+      };
       sections = {
         lualine_a = [
           {
-            name = "mode";
+            __unkeyed = "mode";
             fmt = "string.lower";
             color = {
               fg =
@@ -23,8 +55,8 @@ in {
         ];
         lualine_b = [
           {
-            name = "branch";
-            icon = "";
+            __unkeyed = "branch";
+            icon.__unkeyed = "";
             color = {
               fg =
                 if config.colorschemes.base16.enable
@@ -35,19 +67,24 @@ in {
                 then colors.base00
                 else "none";
             };
+            separator.left = "";
+            separator.right = "";
           }
           "diff"
+          {
+            __unkeyed = "diff";
+            separator.left = "";
+            separator.right = "";
+          }
         ];
         lualine_c = [
           {
-            name = "diagnostic";
-            extraConfig = {
-              symbols = {
-                error = " ";
-                warn = " ";
-                info = " ";
-                hint = "󰝶 ";
-              };
+            __unkeyed = "diagnostic";
+            symbols = {
+              error = " ";
+              warn = " ";
+              info = " ";
+              hint = "󰝶 ";
             };
             color = {
               fg =
@@ -59,25 +96,25 @@ in {
                 then colors.base00
                 else "none";
             };
+            separator.left = "";
+            separator.right = "";
           }
         ];
         lualine_x = [
-          {
-            name = "filetype";
-            extraConfig = {
-              icon_only = true;
-            };
-          }
         ];
         lualine_y = [
           {
-            name = "filename";
-            extraConfig = {
-              symbols = {
-                modified = "";
-                readonly = "";
-                unnamed = "";
-              };
+            __unkeyed = "filetype";
+            icon_only = true;
+            separator.left = "";
+            separator.right = "";
+          }
+          {
+            __unkeyed = "filename";
+            symbols = {
+              modified = "";
+              readonly = "👁️";
+              unnamed = "";
             };
             color = {
               fg =
@@ -90,11 +127,12 @@ in {
                 else "none";
             };
             separator.left = "";
+            separator.right = "";
           }
         ];
         lualine_z = [
           {
-            name = "location";
+            __unkeyed = "location";
             color = {
               fg =
                 if config.colorschemes.base16.enable
@@ -105,34 +143,10 @@ in {
                 then colors.base00
                 else "none";
             };
+            separator.left = "";
+            separator.right = "";
           }
         ];
-      };
-      options = {
-        disabled_filetypes = {
-          statusline = ["dashboard" "alpha" "starter"];
-        };
-        globalstatus = true;
-      };
-      theme = {
-        normal = {
-          a = {
-            bg = "#b4befe";
-            fg = "#1c1d21";
-          };
-          b = {
-            bg = "nil";
-          };
-          c = {
-            bg = "nil";
-          };
-          z = {
-            bg = "nil";
-          };
-          y = {
-            bg = "nil";
-          };
-        };
       };
     };
   };
