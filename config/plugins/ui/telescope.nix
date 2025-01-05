@@ -228,6 +228,7 @@
           "^output/"
           "^data/"
           "%.ipynb"
+          "^dist-newstyle"
         ];
         set_env.COLORTERM = "truecolor";
       };
