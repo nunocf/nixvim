@@ -1,45 +1,14 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 let
   colors = import ../config/colors/${config.theme}.nix { };
 in
 {
   config = lib.mkIf config.colorschemes.base16.enable {
-    highlight = with colors; {
-
-      # Mini tabline
-      MiniTablineCurrent = {
-        bg = "none";
-        fg = base05;
-      };
-      MiniTablineVisible = {
-        bg = "none";
-        fg = base03;
-      };
-      MiniTablineHidden = {
-        bg = "none";
-        fg = base03;
-      };
-      MiniTablineModifiedCurrent = {
-        bg = "none";
-        fg = base0A;
-      };
-      MiniTablineModifiedVisible = {
-        bg = "none";
-        fg = base0B;
-      };
-      MiniTablineModifiedHidden = {
-        bg = "none";
-        fg = base0B;
-      };
-      # Mini Notify
-      MiniNotifyNormal = {
-        bg = base00;
-      };
-      MiniNotifyBorder = {
-        bg = base00;
-        fg = base00;
-      };
-
+    highlight = {
       CursorLine = {
         fg = "none";
         bg = "none";
@@ -49,275 +18,289 @@ in
         bg = "none";
       };
 
+      AlphaHeader = {
+        fg = colors.base0E;
+        bg = "none";
+      };
+
       StatusNormal = {
         bg = "none";
         fg = "none";
       };
 
-      # Telescope
       TelescopePromptBorder = {
-        fg = base01;
-        bg = base01;
+        fg = colors.base01;
+        bg = colors.base01;
       };
       TelescopePromptNormal = {
         fg = "none";
-        bg = base01;
+        bg = colors.base01;
       };
       TelescopePromptPrefix = {
-        fg = base08;
-        bg = base01;
+        fg = colors.base08;
+        bg = colors.base01;
       };
 
       TelescopeSelection = {
         fg = "none";
-        bg = base01;
+        bg = colors.base01;
       };
 
-      # Popup menu
       Pmenu = {
         fg = "none";
-        bg = base01;
+        bg = colors.base01;
       };
       PmenuSbar = {
         fg = "none";
-        bg = base01;
+        bg = colors.base01;
       };
       PmenuThumb = {
         fg = "none";
-        bg = base01;
+        bg = colors.base01;
       };
       PmenuSel = {
         fg = "none";
-        bg = base02;
+        bg = colors.base02;
       };
 
-      # Completion
       CmpItemAbbrMatch = {
-        fg = base05;
+        fg = colors.base05;
         bg = "none";
       };
       CmpItemAbbrMatchFuzzy = {
-        fg = base05;
+        fg = colors.base05;
         bg = "none";
       };
       CmpItemAbbr = {
-        fg = base03;
+        fg = colors.base03;
         bg = "none";
       };
       CmpItemKind = {
-        fg = base0E;
+        fg = colors.base0E;
         bg = "none";
       };
       CmpItemMenu = {
-        fg = base0E;
+        fg = colors.base0E;
         bg = "none";
       };
       CmpItemKindSnippet = {
-        fg = base0E;
+        fg = colors.base0E;
         bg = "none";
       };
 
       VertSplit = {
-        fg = base01;
+        fg = colors.base01;
         bg = "none";
+      };
+      FloatBorder = {
+        fg = colors.base01;
+        bg = colors.base01;
+      };
+      NormalFloat = {
+        fg = "none";
+        bg = colors.base01;
       };
 
       LineNr = {
-        fg = base03;
+        fg = colors.base03;
         bg = "none";
       };
 
-      # Noice
       NoiceCmdlinePopup = {
-        fg = base04;
-        bg = base01;
+        fg = colors.base04;
+        bg = colors.base01;
       };
       NoiceCmdlinePopupBorder = {
-        fg = base01;
-        bg = base01;
+        fg = colors.base01;
+        bg = colors.base01;
       };
       NoiceCmdlinePopupBorderSearch = {
-        fg = base01;
-        bg = base01;
+        fg = colors.base01;
+        bg = colors.base01;
       };
 
-      # Treesitter
       TSAttribute = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSBoolean = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSCharacter = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSComment = {
-        fg = base02;
+        fg = colors.base02;
+
+        italic = true;
+      };
+      Comment = {
+        fg = colors.base02;
         italic = true;
       };
       TSConditional = {
-        fg = base08;
+        fg = colors.base08;
       };
       TSConstant = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSConstBuiltin = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSConstMacro = {
-        fg = base0A;
+        fg = colors.base0A;
       };
       TSConstructor = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSException = {
-        fg = base03;
+        fg = colors.base03;
       };
       TSField = {
-        fg = base08;
+        fg = colors.base08;
       };
       TSFloat = {
-        fg = base03;
+        fg = colors.base03;
+
       };
       TSFunction = {
-        fg = base08;
+        fg = colors.base08;
       };
       TSFuncBuiltin = {
-        fg = base0C;
+        fg = colors.base0C;
       };
       TSFuncMacro = {
-        fg = base0B;
+        fg = colors.base0B;
       };
       TSInclude = {
-        fg = base08;
+        fg = colors.base08;
       };
       TSKeyword = {
-        fg = base0E;
+        fg = colors.base0E;
       };
       TSKeywordFunction = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TsKeywordOperator = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSKeywordReturn = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSLabel = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSMethod = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSNamespace = {
-        fg = base08;
+        fg = colors.base08;
       };
       TSNumber = {
-        fg = base0A;
+        fg = colors.base0A;
       };
       TSParameter = {
-        fg = base08;
+        fg = colors.base08;
       };
       TSParameterReference = {
-        fg = base08;
+        fg = colors.base08;
       };
       TSProperty = {
-        fg = base08;
+        fg = colors.base08;
       };
       TSPunctDelimiter = {
-        fg = base05;
+        fg = colors.base05;
       };
       TSPunctBracket = {
-        fg = base05;
+        fg = colors.base05;
       };
       TSPunctSpecial = {
-        fg = base05;
+        fg = colors.base05;
       };
       TSRepeat = {
-        fg = base0A;
+        fg = colors.base0A;
       };
       TSString = {
-        fg = base0B;
+        fg = colors.base0B;
       };
       TSStringRegex = {
-        fg = base0B;
+        fg = colors.base0B;
       };
       TSStringEscape = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSStringSpecial = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSSymbol = {
-        fg = base08;
+        fg = colors.base08;
       };
       TSTag = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSTagAttribute = {
-        fg = base08;
+        fg = colors.base08;
       };
       TSTagDelimiter = {
-        fg = base05;
+        fg = colors.base05;
       };
       TSText = {
-        fg = base05;
+        fg = colors.base05;
       };
       TSStrong = {
-        fg = base05;
+        fg = colors.base05;
       };
       TSEmphasis = {
         italic = true;
-        fg = base05;
+        fg = colors.base05;
       };
       TSUnderline = {
-        fg = base0E;
+        fg = colors.base0E;
       };
       TSStrike = {
-        fg = base05;
+        fg = colors.base05;
       };
       TSTitle = {
-        fg = base0A;
+        fg = colors.base0A;
       };
       TSLiteral = {
-        fg = base0B;
+        fg = colors.base0B;
       };
       TSURI = {
-        fg = base0A;
+        fg = colors.base0A;
       };
       TSMath = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSTextReference = {
-        fg = base0D;
+        fg = colors.base0D;
       };
       TSEnvirontment = {
-        fg = base0E;
+        fg = colors.base0E;
       };
       TSEnvironmentName = {
-        fg = base0A;
+        fg = colors.base0A;
       };
       TSNote = {
-        fg = base03;
+        fg = colors.base03;
       };
       TSWarning = {
-        fg = base00;
-        bg = base08;
+        fg = colors.base00;
+        bg = colors.base08;
       };
       TSDanger = {
-        fg = base03;
+        fg = colors.base03;
       };
       TSType = {
-        fg = base0A;
+        fg = colors.base0A;
       };
       TSTypeBuiltin = {
-        fg = base0A;
+        fg = colors.base0A;
       };
       TSVariable = {
-        fg = base05;
+        fg = colors.base05;
       };
       TSVariableBuiltin = {
-        fg = base0D;
+        fg = colors.base0D;
       };
     };
   };

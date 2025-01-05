@@ -1,9 +1,18 @@
-{config, ...}: let
+{ config, ... }:
+let
   colors = import ../../colors/${config.theme}.nix;
-in {
+in
+{
   colorschemes = {
-    base16 = {
+    everforest = {
       enable = true;
+    };
+    kanagawa = {
+      enable = false;
+    };
+
+    base16 = {
+      enable = false;
       setUpBar = false;
       colorscheme = colors;
       settings = {

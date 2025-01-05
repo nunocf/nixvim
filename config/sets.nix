@@ -111,6 +111,6 @@
 
     # We don't need to see things like INSERT anymore
     showmode = false;
-    # background = "dark";
+    background = "dark";
   };
 }
