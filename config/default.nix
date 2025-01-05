@@ -14,6 +14,8 @@
 
     ./snippets/luasnip.nix
 
+    ./plugins/haskell/haskell-tools.nix
+
     ./plugins/colorscheme/colorscheme.nix
     ./plugins/completion
     ./plugins/git

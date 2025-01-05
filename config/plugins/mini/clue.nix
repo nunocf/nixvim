@@ -128,6 +128,16 @@ in
       }
       {
         mode = "n";
+        keys = "<Leader>h";
+        desc = "+Haskell";
+      }
+      {
+        mode = "n";
+        keys = "<Leader>hr";
+        desc = "+REPL";
+      }
+      {
+        mode = "n";
         keys = "<Leader>l";
         desc = "+Flash";
       }

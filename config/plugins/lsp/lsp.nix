@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   plugins = {
     lsp-format = {
       enable = true;
@@ -29,16 +30,20 @@
         eslint = {
           enable = true;
         };
-        hls = {
-          enable = true;
-          installGhc = true;
-          settings = {
-            haskell = {
-              formattingProvider = "ormolu";
-            };
-          };
-          filetypes = ["haskell" "lhaskell" "cabal"];
-        };
+        # hls = {
+        #   enable = true;
+        #   autostart = true;
+        #   settings = {
+        #     haskell = {
+        #       formattingProvider = "ormolu";
+        #     };
+        #   };
+        #   filetypes = [
+        #     "haskell"
+        #     "lhaskell"
+        #     "cabal"
+        #   ];
+        # };
         elmls = {
           enable = true;
         };

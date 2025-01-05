@@ -27,7 +27,7 @@
     }
     {
       mode = "n";
-      key = "<leader>fW";
+      key = "<leader>fG";
       action.__raw = ''
         function()
           require("telescope.builtin").live_grep {
@@ -63,7 +63,7 @@
     })
     (lib.mkIf config.plugins.telescope.extensions.live-grep-args.enable {
       mode = "n";
-      key = "<leader>fw";
+      key = "<leader>fg";
       action = "<cmd>Telescope live_grep_args<CR>";
       options = {
         desc = "Live grep (args)";
@@ -72,48 +72,49 @@
   ];
 
   plugins.telescope = {
-    enable = false;
+    enable = true;
 
-    # extensions = {
-    #   file-browser = {
-    #     enable = true;
-    #     settings = {
-    #       hidden = true;
-    #     };
-    #   };
-    #
-    #   frecency = {
-    #     # FIXME: super slow loading
-    #     # enable = true;
-    #     settings = {
-    #       auto_validate = false;
-    #     };
-    #   };
-    #
-    #   fzf-native = {
-    #     enable = true;
-    #   };
-    #
-    #   live-grep-args.enable = true;
-    #
-    #   ui-select = {
-    #     enable = true;
-    #     settings = {
-    #       __unkeyed.__raw = ''require("telescope.themes").get_dropdown{}'';
-    #     };
-    #   };
-    #
-    #   undo = {
-    #     enable = true;
-    #     settings = {
-    #       side_by_side = true;
-    #       layout_strategy = "vertical";
-    #       layout_config = {
-    #         preview_height = 0.8;
-    #       };
-    #     };
-    #   };
-    # };
+    extensions = {
+      file-browser = {
+        enable = true;
+        settings = {
+          hidden = true;
+        };
+      };
+
+      #
+      #   frecency = {
+      #     # FIXME: super slow loading
+      #     # enable = true;
+      #     settings = {
+      #       auto_validate = false;
+      #     };
+      #   };
+      #
+      fzf-native = {
+        enable = true;
+      };
+      #
+      live-grep-args.enable = true;
+
+      ui-select = {
+        enable = true;
+        settings = {
+          __unkeyed.__raw = ''require("telescope.themes").get_dropdown{}'';
+        };
+      };
+
+      undo = {
+        enable = true;
+        settings = {
+          side_by_side = true;
+          layout_strategy = "vertical";
+          layout_config = {
+            preview_height = 0.8;
+          };
+        };
+      };
+    };
 
     keymaps = {
       "<leader>f'" = {
