@@ -4,6 +4,13 @@ let
 in
 {
   colorschemes = {
+    rose-pine = {
+      enable = false;
+      settings = {
+        dark_variant = "moon";
+      };
+
+    };
     everforest = {
       enable = true;
     };
