@@ -27,7 +27,10 @@
       numShortcut = true;
       keys = {
         exec = "<CR>";
-        quit = ["<Esc>" "q"];
+        quit = [
+          "<Esc>"
+          "q"
+        ];
       };
     };
     lightbulb = {
@@ -42,7 +45,10 @@
       autoSave = false;
       keys = {
         exec = "<CR>";
-        quit = ["<C-k>" "<Esc>"];
+        quit = [
+          "<C-k>"
+          "<Esc>"
+        ];
         select = "x";
       };
     };
@@ -163,24 +169,5 @@
       };
     }
 
-    {
-      mode = "n";
-      key = "<leader>x";
-      action = "<cmd>Lspsaga diagnostic_jump_next<CR>";
-      options = {
-        desc = "Next Diagnostic";
-        silent = true;
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>X";
-      action = "<cmd>Lspsaga diagnostic_jump_prev<CR>";
-      options = {
-        desc = "Previous Diagnostic";
-        silent = true;
-      };
-    }
   ];
 }
